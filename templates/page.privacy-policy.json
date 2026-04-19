@@ -3,7 +3,7 @@
     "main": {
       "type": "theo-marketing",
       "settings": {
-        "page_variant": "support",
+        "page_variant": "privacy",
         "apple_store_link": "",
         "google_play_link": "",
         "support_email": "support@theo.coach",

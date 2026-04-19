@@ -1,5 +1,17 @@
+{% liquid
+  assign page_variant = 'support'
+
+  if page.handle == 'privacy-policy'
+    assign page_variant = 'privacy'
+  elsif page.handle == 'terms-of-service'
+    assign page_variant = 'terms'
+  elsif page.handle == 'contact'
+    assign page_variant = 'support'
+  endif
+%}
+
 {% render 'theo-marketing-content',
-  page_variant: section.settings.page_variant,
+  page_variant: page_variant,
   support_email: section.settings.support_email,
   website_url: section.settings.website_url,
   response_window: section.settings.response_window,
@@ -9,20 +21,8 @@
 
 {% schema %}
 {
-  "name": "Theo marketing",
+  "name": "Theo page router",
   "settings": [
-    {
-      "type": "select",
-      "id": "page_variant",
-      "label": "Page variant",
-      "options": [
-        { "value": "home", "label": "Home" },
-        { "value": "support", "label": "Support" },
-        { "value": "privacy", "label": "Privacy" },
-        { "value": "terms", "label": "Terms" }
-      ],
-      "default": "home"
-    },
     {
       "type": "url",
       "id": "apple_store_link",
@@ -54,7 +54,7 @@
   ],
   "presets": [
     {
-      "name": "Theo marketing"
+      "name": "Theo page router"
     }
   ]
 }

@@ -1,0 +1,137 @@
+<section class="theo-page theo-page--{{ page_variant }}">
+  <style>
+    .theo-page {
+      --theo-bg: #f7f0e4;
+      --theo-bg-soft: #fbf7f0;
+      --theo-surface: #f3e6cf;
+      --theo-surface-soft: #eef6fb;
+      --theo-card: rgba(255, 250, 242, 0.78);
+      --theo-text: #0f0f0d;
+      --theo-muted: #6c6256;
+      --theo-fawn: #c6ad84;
+      --theo-copper: #958263;
+      --theo-stone: #635742;
+      --theo-slate: #5d7380;
+      --theo-steel: #8badc0;
+      --theo-blue: #b9e6ff;
+      --theo-border: rgba(99, 87, 66, 0.12);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(198, 173, 132, 0.34), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(185, 230, 255, 0.75), transparent 26%),
+        linear-gradient(180deg, #fcf8f1 0%, #f7f0e4 100%);
+      color: var(--theo-text);
+      position: relative;
+      overflow: hidden;
+    }
+    .theo-shell { position: relative; max-width: 1180px; margin: 0 auto; padding: 32px 20px 88px; z-index: 1; }
+    .theo-nav { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:34px; }
+    .theo-brand { text-decoration:none; color:var(--theo-text); display:inline-flex; align-items:center; }
+    .theo-brand-logo { display:block; width:clamp(132px, 18vw, 190px); height:auto; }
+    .theo-nav-links { display:inline-flex; align-items:center; gap:18px; flex-wrap:wrap; }
+    .theo-nav-links a { color:var(--theo-stone); text-decoration:none; font-size:0.95rem; font-weight:600; }
+    .theo-nav-links a:hover { color:var(--theo-text); }
+    .theo-hero { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(320px,0.96fr); gap:34px; align-items:start; }
+    .theo-hero-copy { padding-top:20px; }
+    .theo-eyebrow { display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:999px; background:rgba(255,250,242,0.82); border:1px solid rgba(149,130,99,0.14); color:var(--theo-slate); font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:18px; backdrop-filter:blur(10px); }
+    .theo-title { margin:0 0 16px; font-size:clamp(2.7rem, 7vw, 5.4rem); line-height:0.94; letter-spacing:-0.07em; max-width:10ch; color:var(--theo-text); }
+    .theo-lead { max-width:58ch; margin:0; color:var(--theo-muted); font-size:1.08rem; line-height:1.72; }
+    .theo-store-buttons { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:28px; }
+    .theo-store-badge { display:inline-flex; align-items:center; justify-content:center; height:62px; text-decoration:none; transition:transform 160ms ease, box-shadow 160ms ease; }
+    .theo-store-badge:hover,.theo-store-badge:focus-visible { transform:translateY(-1px); }
+    .theo-store-badge img { display:block; width:auto; object-fit:contain; }
+    .theo-store-badge--apple img { height:56px; }
+    .theo-store-badge--google img { height:56px; width:auto; }
+    .theo-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:26px; max-width:620px; }
+    .theo-proof-item { background:rgba(255,250,242,0.72); border:1px solid rgba(99,87,66,0.1); border-radius:20px; padding:14px 16px; }
+    .theo-proof-item strong { display:block; font-size:0.86rem; color:var(--theo-text); margin-bottom:6px; }
+    .theo-proof-item span { color:var(--theo-muted); font-size:0.86rem; line-height:1.5; }
+    .theo-phone { background:rgba(255,250,242,0.58); border:1px solid rgba(99,87,66,0.1); border-radius:34px; padding:16px; box-shadow:0 18px 48px rgba(99,87,66,0.08); backdrop-filter:blur(12px); }
+    .theo-phone-screen { position:relative; overflow:hidden; border-radius:28px; background:linear-gradient(180deg,#fcf8f1 0%,#f7f0e4 100%); border:1px solid rgba(149,130,99,0.12); min-height:620px; padding:26px; }
+    .theo-phone-screen::before,.theo-phone-screen::after { content:""; position:absolute; border-radius:999px; pointer-events:none; }
+    .theo-phone-screen::before { width:220px; height:220px; left:-56px; top:-20px; background:rgba(198,173,132,0.48); }
+    .theo-phone-screen::after { width:280px; height:280px; right:-80px; top:108px; background:rgba(185,230,255,0.8); }
+    .theo-ui { position:relative; z-index:1; }
+    .theo-ui-brand { font-size:3.5rem; line-height:0.88; letter-spacing:-0.08em; font-weight:800; margin:0; }
+    .theo-ui-sub { font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--theo-slate); margin-top:8px; }
+    .theo-ui-headline { margin:28px 0 10px; font-size:2.15rem; line-height:1.02; letter-spacing:-0.045em; max-width:10ch; }
+    .theo-ui-copy { max-width:28ch; color:var(--theo-muted); line-height:1.68; margin:0 0 20px; }
+    .theo-ui-card { border-radius:28px; padding:22px; border:1px solid rgba(99,87,66,0.1); margin-top:16px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.4); }
+    .theo-ui-card--warm { background:var(--theo-surface); }
+    .theo-ui-card--cool { background:var(--theo-surface-soft); }
+    .theo-ui-label { display:block; margin-bottom:10px; color:var(--theo-slate); font-size:0.76rem; letter-spacing:0.16em; text-transform:uppercase; }
+    .theo-ui-card h3 { margin:0 0 10px; font-size:1.88rem; line-height:1.06; letter-spacing:-0.035em; }
+    .theo-ui-card p { margin:0 0 14px; color:var(--theo-muted); line-height:1.62; }
+    .theo-chip { display:inline-flex; align-items:center; gap:8px; padding:10px 15px; border-radius:999px; background:rgba(255,250,242,0.88); border:1px solid rgba(149,130,99,0.14); color:var(--theo-stone); font-size:0.86rem; margin-bottom:14px; }
+    .theo-session { display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(255,250,242,0.94); border-radius:18px; padding:16px 18px; margin-bottom:14px; }
+    .theo-session small { display:block; color:var(--theo-copper); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:4px; }
+    .theo-session strong { display:block; font-size:1.05rem; }
+    .theo-session span { color:var(--theo-copper); font-size:0.9rem; white-space:nowrap; }
+    .theo-primary-chip { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 20px; border-radius:999px; background:var(--theo-blue); color:var(--theo-text); font-weight:700; text-decoration:none; }
+    .theo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:22px; }
+    .theo-feature { background:rgba(255,250,242,0.76); border:1px solid rgba(99,87,66,0.1); border-radius:26px; padding:24px; }
+    .theo-feature h3 { margin:0 0 10px; font-size:1.28rem; letter-spacing:-0.03em; }
+    .theo-feature p { margin:0; color:var(--theo-muted); line-height:1.66; }
+    .theo-legal-hero { display:grid; grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr); gap:20px; align-items:start; }
+    .theo-legal-intro,.theo-support-intro,.theo-legal-main,.theo-support-main { background:rgba(255,250,242,0.76); border:1px solid rgba(99,87,66,0.1); border-radius:28px; padding:28px; }
+    .theo-legal-main,.theo-support-main { background:rgba(255,250,242,0.84); }
+    .theo-legal-intro h1,.theo-support-intro h1,.theo-legal-main h2,.theo-support-main h2 { margin:0 0 12px; line-height:1.05; letter-spacing:-0.045em; }
+    .theo-legal-intro p,.theo-support-intro p,.theo-legal-main p,.theo-support-main p,.theo-legal-main li,.theo-support-main li { color:var(--theo-muted); line-height:1.72; }
+    .theo-legal-main section,.theo-support-main section { padding-top:22px; margin-top:22px; border-top:1px solid rgba(99,87,66,0.08); }
+    .theo-legal-main section:first-child,.theo-support-main section:first-child { padding-top:0; margin-top:0; border-top:0; }
+    .theo-legal-main ul,.theo-support-main ul { padding-left:20px; margin:12px 0 0; }
+    .theo-meta { display:grid; gap:14px; margin-top:18px; }
+    .theo-meta-item { background:rgba(238,246,251,0.72); border:1px solid rgba(139,173,192,0.22); border-radius:20px; padding:16px 18px; }
+    .theo-meta-item strong { display:block; margin-bottom:6px; font-size:0.94rem; color:var(--theo-text); }
+    .theo-meta-item span,.theo-meta-item a { color:var(--theo-muted); text-decoration:none; line-height:1.6; }
+    .theo-meta-item a:hover { text-decoration:underline; color:var(--theo-text); }
+    .theo-callout { margin-top:18px; padding:18px 20px; background:rgba(185,230,255,0.34); border:1px solid rgba(139,173,192,0.28); border-radius:22px; color:var(--theo-stone); line-height:1.68; }
+    .theo-footer { margin-top:26px; padding-top:20px; border-top:1px solid rgba(99,87,66,0.08); display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; color:var(--theo-muted); font-size:0.92rem; }
+    .theo-footer a { color:var(--theo-stone); text-decoration:none; margin-right:14px; }
+    .theo-footer a:hover { text-decoration:underline; }
+    @media screen and (max-width:989px) { .theo-hero,.theo-grid,.theo-proof,.theo-legal-hero { grid-template-columns:1fr; } .theo-phone-screen { min-height:auto; } .theo-hero-copy { padding-top:0; } }
+    @media screen and (max-width:749px) { .theo-shell { padding:20px 16px 60px; } .theo-nav { align-items:flex-start; flex-direction:column; } .theo-nav-links { width:100%; justify-content:space-between; gap:12px; } .theo-store-buttons { flex-direction:column; align-items:stretch; } .theo-store-badge { width:100%; height:auto; justify-content:flex-start; } .theo-store-badge--apple img,.theo-store-badge--google img { height:54px; } .theo-title { max-width:none; } .theo-phone,.theo-phone-screen,.theo-feature,.theo-legal-intro,.theo-support-intro,.theo-legal-main,.theo-support-main { border-radius:24px; } }
+  </style>
+
+  <div class="theo-shell">
+    <nav class="theo-nav" aria-label="Theo">
+      <a class="theo-brand" href="/" aria-label="Theo home">
+        <img class="theo-brand-logo" src="{{ 'theo-logo.png' | asset_url }}" alt="Theo">
+      </a>
+      <div class="theo-nav-links">
+        <a href="https://theo.coach/pages/contact">Support</a>
+        <a href="https://theo.coach/pages/privacy-policy">Privacy</a>
+        <a href="https://theo.coach/pages/terms-of-service">Terms</a>
+      </div>
+    </nav>
+
+    {% case page_variant %}
+      {% when 'home' %}
+        <div class="theo-hero">
+          <div class="theo-hero-copy">
+            <span class="theo-eyebrow">AI mindset coach for athletes</span>
+            <h1 class="theo-title">Your journal, but spoken out loud.</h1>
+            <p class="theo-lead">Theo is a voice-first AI mindset coach built for athletes and performance-focused people who want reflection to feel more natural, more consistent, and actually useful over time.</p>
+            <div class="theo-store-buttons">
+              <a class="theo-store-badge theo-store-badge--apple" href="{{ apple_store_link | default: '#' }}" aria-label="Download on the App Store"><img src="{{ 'app-store-badge.png' | asset_url }}" alt="Download on the App Store"></a>
+              <a class="theo-store-badge theo-store-badge--google" href="{{ google_play_link | default: '#' }}" aria-label="Get it on Google Play"><img src="{{ 'google-play-badge.png' | asset_url }}" alt="Get it on Google Play"></a>
+            </div>
+            <div class="theo-proof">
+              <div class="theo-proof-item"><strong>Voice-first</strong><span>Talk instead of typing your journal every day.</span></div>
+              <div class="theo-proof-item"><strong>AI-supported</strong><span>Patterns, routines, and reflections become more useful over time.</span></div>
+              <div class="theo-proof-item"><strong>Performance-minded</strong><span>Made for calm, clarity, and focus before big moments.</span></div>
+            </div>
+          </div>
+          <div class="theo-phone"><div class="theo-phone-screen"><div class="theo-ui"><h2 class="theo-ui-brand">theo</h2><div class="theo-ui-sub">Mindset coach</div><h3 class="theo-ui-headline">Your journal, but spoken out loud.</h3><p class="theo-ui-copy">Daily spoken reflection that helps you reset, stay grounded, and show up sharper.</p><div class="theo-ui-card theo-ui-card--warm"><span class="theo-ui-label">Today's session</span><h3>Morning daily check-in is ready.</h3><p>Your saved practices are ready to be worked through live with Theo whenever you check in.</p><div class="theo-chip">Streak · 6 days 🔥</div><div class="theo-session"><div><small>Morning</small><strong>Journaling</strong></div><span>5 prompts</span></div><span class="theo-primary-chip">Start voice check-in →</span></div><div class="theo-ui-card theo-ui-card--cool"><span class="theo-ui-label">Theo remembers</span><h3>Your patterns should come back when they matter.</h3><p>Theo helps turn repeated reflection into useful memory, so pressure moments feel calmer and more prepared.</p></div></div></div></div>
+        </div>
+        <div class="theo-grid"><div class="theo-feature"><h3>Talk instead of type</h3><p>Daily journaling becomes a conversation, which makes consistency far easier than staring at a blank notes page.</p></div><div class="theo-feature"><h3>Reflect. Reset. Perform.</h3><p>Use Theo before training, after competition, or during any moment where your mindset needs a calm reset.</p></div><div class="theo-feature"><h3>Useful memory over time</h3><p>Theo is built to understand recurring patterns, routines, and focus areas so your reflection compounds instead of disappearing.</p></div></div>
+      {% when 'support' %}
+        <div class="theo-legal-hero"><div class="theo-support-intro"><span class="theo-eyebrow">Theo support</span><h1 class="theo-title" style="max-width:none;">Need help with Theo?</h1><p>If you need help with account access, subscriptions, app issues, privacy questions, or account deletion, use the contact details below and include the email linked to your Theo account where possible.</p><div class="theo-meta"><div class="theo-meta-item"><strong>Support email</strong><a href="mailto:{{ support_email }}">{{ support_email }}</a></div><div class="theo-meta-item"><strong>Website</strong><a href="{{ website_url }}">{{ website_url }}</a></div><div class="theo-meta-item"><strong>Response window</strong><span>{{ response_window }}</span></div></div><div class="theo-callout">Theo is a voice-first AI mindset coach for athletes and performance-focused people. It is not a medical service, crisis service, or substitute for professional mental health care.</div></div><div class="theo-support-main"><section><h2>Account and sign-in help</h2><p>If you cannot access your account, contact support from the email address connected to your Theo account. We may ask you to verify ownership before making account-related changes.</p></section><section><h2>Subscriptions and billing</h2><p>If you subscribed through the Apple App Store or Google Play, subscription management, billing updates, cancellations, and refunds may be governed by the relevant store’s billing terms and support processes.</p><ul><li>Manage or cancel your subscription through the store account used for purchase.</li><li>For app access issues after billing changes, contact Theo support.</li></ul></section><section><h2>App issues and troubleshooting</h2><p>If Theo is not working as expected, include your device type, operating system version, and a short description of the issue when you contact support. Screenshots can also help us resolve problems faster.</p></section><section><h2>Account deletion and privacy requests</h2><p>If account deletion is supported in-app, start the deletion request from within the app. If an email confirmation step is required, follow the instructions sent to your registered email address. You can also contact support with privacy or data-related requests.</p></section></div></div>
+      {% when 'privacy' %}
+        <div class="theo-legal-hero"><div class="theo-legal-intro"><span class="theo-eyebrow">Legal</span><h1 class="theo-title" style="max-width:none;">Privacy Policy</h1><p>This page explains what information Theo may collect, how it may be used, how it may be shared, and how users can contact Theo about privacy, deletion, or access requests.</p><div class="theo-callout">Theo is designed to support reflection, journaling, and mindset check-ins. It is not intended to provide medical or mental health treatment.</div></div><div class="theo-legal-main"><section><h2>Information we collect</h2><p>Theo may collect account details such as your name, email address, sign-in information, subscription status, support communications, device information, usage data, and content you choose to provide while using the app.</p><ul><li>Account and authentication information</li><li>Device, app, and diagnostic information</li><li>Voice recordings, transcripts, journal entries, summaries, or reflections if these features are enabled</li><li>Support requests and related communications</li></ul></section><section><h2>How information is used</h2><p>Theo may use information to provide and improve the service, personalise the app experience, support memory or reflection features, maintain security, process subscriptions, respond to support requests, and comply with legal obligations.</p></section><section><h2>How information may be shared</h2><p>Theo may share information with service providers and infrastructure partners that support hosting, analytics, authentication, customer support, payment processing, and app functionality. Information may also be disclosed if required to comply with applicable law or to protect users, Theo, or others.</p></section><section><h2>Data retention</h2><p>Theo may retain information for as long as reasonably necessary to operate the service, maintain account functionality, resolve disputes, enforce agreements, and meet legal or compliance obligations. Some data may remain in backups or logs for a limited period after deletion requests are processed.</p></section><section><h2>Your choices and requests</h2><p>You may contact Theo regarding account access, correction, deletion, or privacy questions. If identity verification is required before a request can be processed, Theo may ask for reasonable confirmation steps.</p></section><section><h2>Contact</h2><p>For privacy-related questions or requests, contact <a href="mailto:{{ support_email }}">{{ support_email }}</a>.</p></section></div></div>
+      {% when 'terms' %}
+        <div class="theo-legal-hero"><div class="theo-legal-intro"><span class="theo-eyebrow">Legal</span><h1 class="theo-title" style="max-width:none;">Terms of Service</h1><p>These terms describe the basic rules for using Theo, including account use, subscriptions, acceptable behaviour, and important disclaimers.</p><div class="theo-callout">Theo is a mindset and journaling tool. It is not a psychologist, therapist, medical provider, or emergency support service.</div></div><div class="theo-legal-main"><section><h2>Using Theo</h2><p>By using Theo, you agree to use the app only for lawful purposes and in accordance with these terms. You are responsible for the activity that occurs under your account and for maintaining the confidentiality of your login credentials.</p></section><section><h2>Eligibility</h2><p>You must meet any minimum age or legal eligibility requirements that apply in your location to use Theo. If you are using Theo on behalf of another person or organisation, you represent that you have authority to do so.</p></section><section><h2>Subscriptions and billing</h2><p>If Theo offers paid subscriptions, billing, renewals, cancellation rights, and refund handling may be managed by Apple App Store or Google Play where applicable. You are responsible for reviewing the billing terms that apply to your purchase channel.</p></section><section><h2>Acceptable use</h2><p>You agree not to misuse the service, interfere with app operations, attempt unauthorised access, upload malicious content, violate laws, or use Theo in a way that could harm the service, its users, or third parties.</p></section><section><h2>Disclaimers</h2><p>Theo is provided for reflection, journaling, and mindset support. It is not intended to diagnose, treat, cure, or prevent any medical or mental health condition, and it does not replace advice, treatment, or support from qualified professionals.</p></section><section><h2>Limitation of liability</h2><p>To the maximum extent permitted by law, Theo and its operators are not liable for indirect, incidental, special, consequential, or exemplary damages arising from your use of the app. Local laws may provide rights that cannot be excluded.</p></section><section><h2>Contact</h2><p>If you have questions about these terms, contact <a href="mailto:{{ support_email }}">{{ support_email }}</a>.</p></section></div></div>
+    {% endcase %}
+
+    <div class="theo-footer"><div>© {{ 'now' | date: '%Y' }} Theo</div><div><a href="https://theo.coach/pages/contact">Support</a><a href="https://theo.coach/pages/privacy-policy">Privacy</a><a href="https://theo.coach/pages/terms-of-service">Terms</a></div></div>
+  </div>
+</section>

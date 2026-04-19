@@ -1,9 +1,8 @@
 {
   "sections": {
     "main": {
-      "type": "theo-marketing",
+      "type": "theo-page-router",
       "settings": {
-        "page_variant": "support",
         "apple_store_link": "",
         "google_play_link": "",
         "support_email": "support@theo.coach",

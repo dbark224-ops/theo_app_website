@@ -1,20 +1,11 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "theo_home": {
       "type": "theo-marketing",
       "settings": {
         "page_variant": "home",
-        "primary_button_text": "Download on the App Store",
-        "primary_button_link": "",
+        "apple_store_link": "",
+        "google_play_link": "",
         "support_email": "support@theo.coach",
         "website_url": "https://theo.coach",
         "response_window": "Usually within 1–2 business days"

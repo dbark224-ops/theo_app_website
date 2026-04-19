@@ -44,22 +44,13 @@
       text-decoration: none;
       color: var(--theo-text);
       display: inline-flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
     }
 
-    .theo-brand-word {
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      line-height: 0.88;
-      letter-spacing: -0.08em;
-      font-weight: 800;
-    }
-
-    .theo-brand-sub {
-      font-size: 0.74rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--theo-slate);
+    .theo-brand-logo {
+      display: block;
+      width: clamp(132px, 18vw, 190px);
+      height: auto;
     }
 
     .theo-nav-links {
@@ -600,15 +591,14 @@
 
   <div class="theo-shell">
     <nav class="theo-nav" aria-label="Theo">
-      <a class="theo-brand" href="/">
-        <span class="theo-brand-word">theo</span>
-        <span class="theo-brand-sub">Mindset coach</span>
+      <a class="theo-brand" href="/" aria-label="Theo home">
+        <img class="theo-brand-logo" src="{{ 'theo-logo.png' | asset_url }}" alt="Theo">
       </a>
 
       <div class="theo-nav-links">
-        <a href="/pages/support">Support</a>
-        <a href="/pages/privacy">Privacy</a>
-        <a href="/pages/terms">Terms</a>
+        <a href="https://theo.coach/pages/contact">Support</a>
+        <a href="https://theo.coach/pages/privacy-policy">Privacy</a>
+        <a href="https://theo.coach/pages/terms-of-service">Terms</a>
         <a class="theo-nav-cta" href="{{ section.settings.primary_button_link | default: '#' }}">{{ section.settings.primary_button_text }}</a>
       </div>
     </nav>
@@ -763,9 +753,9 @@
     <div class="theo-footer">
       <div>© {{ 'now' | date: '%Y' }} Theo</div>
       <div>
-        <a href="/pages/support">Support</a>
-        <a href="/pages/privacy">Privacy</a>
-        <a href="/pages/terms">Terms</a>
+        <a href="https://theo.coach/pages/contact">Support</a>
+        <a href="https://theo.coach/pages/privacy-policy">Privacy</a>
+        <a href="https://theo.coach/pages/terms-of-service">Terms</a>
       </div>
     </div>
   </div>

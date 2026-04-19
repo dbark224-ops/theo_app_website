@@ -46,27 +46,7 @@
     .theo-proof-item strong { display:block; font-size:0.86rem; color:var(--theo-text); margin-bottom:6px; }
     .theo-proof-item span { color:var(--theo-muted); font-size:0.86rem; line-height:1.5; }
     .theo-phone { background:rgba(255,250,242,0.58); border:1px solid rgba(99,87,66,0.1); border-radius:34px; padding:16px; box-shadow:0 18px 48px rgba(99,87,66,0.08); backdrop-filter:blur(12px); }
-    .theo-phone-screen { position:relative; overflow:hidden; border-radius:28px; background:linear-gradient(180deg,#fcf8f1 0%,#f7f0e4 100%); border:1px solid rgba(149,130,99,0.12); min-height:620px; padding:26px; }
-    .theo-phone-screen::before,.theo-phone-screen::after { content:""; position:absolute; border-radius:999px; pointer-events:none; }
-    .theo-phone-screen::before { width:220px; height:220px; left:-56px; top:-20px; background:rgba(198,173,132,0.48); }
-    .theo-phone-screen::after { width:280px; height:280px; right:-80px; top:108px; background:rgba(185,230,255,0.8); }
-    .theo-ui { position:relative; z-index:1; }
-    .theo-ui-brand { font-size:3.5rem; line-height:0.88; letter-spacing:-0.08em; font-weight:800; margin:0; }
-    .theo-ui-sub { font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--theo-slate); margin-top:8px; }
-    .theo-ui-headline { margin:28px 0 10px; font-size:2.15rem; line-height:1.02; letter-spacing:-0.045em; max-width:10ch; }
-    .theo-ui-copy { max-width:28ch; color:var(--theo-muted); line-height:1.68; margin:0 0 20px; }
-    .theo-ui-card { border-radius:28px; padding:22px; border:1px solid rgba(99,87,66,0.1); margin-top:16px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.4); }
-    .theo-ui-card--warm { background:var(--theo-surface); }
-    .theo-ui-card--cool { background:var(--theo-surface-soft); }
-    .theo-ui-label { display:block; margin-bottom:10px; color:var(--theo-slate); font-size:0.76rem; letter-spacing:0.16em; text-transform:uppercase; }
-    .theo-ui-card h3 { margin:0 0 10px; font-size:1.88rem; line-height:1.06; letter-spacing:-0.035em; }
-    .theo-ui-card p { margin:0 0 14px; color:var(--theo-muted); line-height:1.62; }
-    .theo-chip { display:inline-flex; align-items:center; gap:8px; padding:10px 15px; border-radius:999px; background:rgba(255,250,242,0.88); border:1px solid rgba(149,130,99,0.14); color:var(--theo-stone); font-size:0.86rem; margin-bottom:14px; }
-    .theo-session { display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(255,250,242,0.94); border-radius:18px; padding:16px 18px; margin-bottom:14px; }
-    .theo-session small { display:block; color:var(--theo-copper); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:4px; }
-    .theo-session strong { display:block; font-size:1.05rem; }
-    .theo-session span { color:var(--theo-copper); font-size:0.9rem; white-space:nowrap; }
-    .theo-primary-chip { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 20px; border-radius:999px; background:var(--theo-blue); color:var(--theo-text); font-weight:700; text-decoration:none; }
+    .theo-phone-shot { display:block; width:100%; height:auto; border-radius:28px; border:1px solid rgba(149,130,99,0.12); box-shadow:0 10px 30px rgba(99,87,66,0.08); background:linear-gradient(180deg,#fcf8f1 0%,#f7f0e4 100%); }
     .theo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:22px; }
     .theo-feature { background:rgba(255,250,242,0.76); border:1px solid rgba(99,87,66,0.1); border-radius:26px; padding:24px; }
     .theo-feature h3 { margin:0 0 10px; font-size:1.28rem; letter-spacing:-0.03em; }
@@ -121,7 +101,7 @@
               <div class="theo-proof-item"><strong>Performance-minded</strong><span>Made for calm, clarity, and focus before big moments.</span></div>
             </div>
           </div>
-          <div class="theo-phone"><div class="theo-phone-screen"><div class="theo-ui"><h2 class="theo-ui-brand">theo</h2><div class="theo-ui-sub">Mindset coach</div><h3 class="theo-ui-headline">Your journal, but spoken out loud.</h3><p class="theo-ui-copy">Daily spoken reflection that helps you reset, stay grounded, and show up sharper.</p><div class="theo-ui-card theo-ui-card--warm"><span class="theo-ui-label">Today's session</span><h3>Morning daily check-in is ready.</h3><p>Your saved practices are ready to be worked through live with Theo whenever you check in.</p><div class="theo-chip">Streak · 6 days 🔥</div><div class="theo-session"><div><small>Morning</small><strong>Journaling</strong></div><span>5 prompts</span></div><span class="theo-primary-chip">Start voice check-in →</span></div><div class="theo-ui-card theo-ui-card--cool"><span class="theo-ui-label">Theo remembers</span><h3>Your patterns should come back when they matter.</h3><p>Theo helps turn repeated reflection into useful memory, so pressure moments feel calmer and more prepared.</p></div></div></div></div>
+          <div class="theo-phone"><img class="theo-phone-shot" src="{{ 'theo-app-screenshot.png' | asset_url }}" alt="Theo app screenshot" loading="lazy" width="1242" height="2688"></div>
         </div>
         <div class="theo-grid"><div class="theo-feature"><h3>Talk instead of type</h3><p>Daily journaling becomes a conversation, which makes consistency far easier than staring at a blank notes page.</p></div><div class="theo-feature"><h3>Reflect. Reset. Perform.</h3><p>Use Theo before training, after competition, or during any moment where your mindset needs a calm reset.</p></div><div class="theo-feature"><h3>Useful memory over time</h3><p>Theo is built to understand recurring patterns, routines, and focus areas so your reflection compounds instead of disappearing.</p></div></div>
       {% when 'support' %}

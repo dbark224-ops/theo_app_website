@@ -127,8 +127,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: transform 160ms ease, box-shadow 160ms ease;
+      height: 64px;
       text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
     .theo-store-badge:hover,
@@ -139,6 +140,7 @@
     .theo-store-badge img {
       display: block;
       width: auto;
+      object-fit: contain;
     }
 
     .theo-store-badge--apple img {
@@ -146,7 +148,8 @@
     }
 
     .theo-store-badge--google img {
-      height: 84px;
+      height: 56px;
+      width: 200px;
     }
 
     .theo-proof {
@@ -542,6 +545,7 @@
 
       .theo-store-badge {
         width: 100%;
+        height: auto;
         justify-content: flex-start;
       }
 
@@ -550,7 +554,8 @@
       }
 
       .theo-store-badge--google img {
-        height: 78px;
+        height: 54px;
+        width: 192px;
       }
 
       .theo-title {

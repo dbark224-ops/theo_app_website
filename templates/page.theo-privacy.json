@@ -1,9 +1,9 @@
 {
   "sections": {
-    "theo_home": {
+    "main": {
       "type": "theo-marketing",
       "settings": {
-        "page_variant": "home",
+        "page_variant": "privacy",
         "primary_button_text": "Download on the App Store",
         "primary_button_link": "",
         "support_email": "support@theo.coach",
@@ -12,7 +12,5 @@
       }
     }
   },
-  "order": [
-    "theo_home"
-  ]
+  "order": ["main"]
 }

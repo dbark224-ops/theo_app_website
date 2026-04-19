@@ -138,8 +138,15 @@
 
     .theo-store-badge img {
       display: block;
-      height: 56px;
       width: auto;
+    }
+
+    .theo-store-badge--apple img {
+      height: 56px;
+    }
+
+    .theo-store-badge--google img {
+      height: 84px;
     }
 
     .theo-proof {
@@ -538,8 +545,12 @@
         justify-content: flex-start;
       }
 
-      .theo-store-badge img {
+      .theo-store-badge--apple img {
         height: 54px;
+      }
+
+      .theo-store-badge--google img {
+        height: 78px;
       }
 
       .theo-title {
@@ -580,10 +591,10 @@
             <p class="theo-lead">Theo is a voice-first AI mindset coach built for athletes and performance-focused people who want reflection to feel more natural, more consistent, and actually useful over time.</p>
 
             <div class="theo-store-buttons">
-              <a class="theo-store-badge" href="{{ section.settings.apple_store_link | default: '#' }}" aria-label="Download on the App Store">
+              <a class="theo-store-badge theo-store-badge--apple" href="{{ section.settings.apple_store_link | default: '#' }}" aria-label="Download on the App Store">
                 <img src="{{ 'app-store-badge.svg' | asset_url }}" alt="Download on the App Store">
               </a>
-              <a class="theo-store-badge" href="{{ section.settings.google_play_link | default: '#' }}" aria-label="Get it on Google Play">
+              <a class="theo-store-badge theo-store-badge--google" href="{{ section.settings.google_play_link | default: '#' }}" aria-label="Get it on Google Play">
                 <img src="{{ 'google-play-badge.png' | asset_url }}" alt="Get it on Google Play">
               </a>
             </div>

@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "theo-page-router",
+      "disabled": true,
       "settings": {
         "apple_store_link": "https://apps.apple.com/us/app/theo-ai-mindset-coach/id6762537147",
         "google_play_link": "https://play.google.com/store/apps/details?id=coach.theo.app&hl=en_US",

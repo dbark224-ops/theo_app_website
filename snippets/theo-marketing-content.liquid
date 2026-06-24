@@ -323,6 +323,29 @@
             <a class="theo-store-badge theo-store-badge--google" href="{{ google_play_link | default: '#' }}" aria-label="Get it on Google Play"><img src="{{ 'google-play-badge.png' | asset_url }}" alt="Get it on Google Play"></a>
           </div>
         </section>
+      {% when 'download' %}
+        <div class="theo-hero">
+          <div class="theo-hero-copy">
+            <span class="theo-eyebrow">Download Theo</span>
+            <h1 class="theo-title">Your journal, but spoken out loud.</h1>
+            <p class="theo-lead">Theo is a voice-first AI mindset coach built for athletes and performance-focused people who want reflection to feel more natural, more consistent, and actually useful over time.</p>
+            <div class="theo-store-buttons">
+              <a class="theo-store-badge theo-store-badge--apple" href="{{ apple_store_link | default: '#' }}" aria-label="Download on the App Store"><img src="{{ 'app-store-badge.png' | asset_url }}" alt="Download on the App Store"></a>
+              <a class="theo-store-badge theo-store-badge--google" href="{{ google_play_link | default: '#' }}" aria-label="Get it on Google Play"><img src="{{ 'google-play-badge.png' | asset_url }}" alt="Get it on Google Play"></a>
+            </div>
+            <div class="theo-proof">
+              <div class="theo-proof-item"><strong>Voice-first</strong><span>Talk instead of typing your journal every day.</span></div>
+              <div class="theo-proof-item"><strong>AI-supported</strong><span>Patterns, routines, and reflections become more useful over time.</span></div>
+              <div class="theo-proof-item"><strong>Performance-minded</strong><span>Made for calm, clarity, and focus before big moments.</span></div>
+            </div>
+          </div>
+          <div class="theo-phone"><img class="theo-phone-shot" src="{{ 'theo-app-screenshot.png' | asset_url }}" alt="Theo app screenshot" loading="lazy" width="1242" height="2688"></div>
+        </div>
+        <div class="theo-grid">
+          <div class="theo-feature"><h3>Talk instead of type</h3><p>Daily journaling becomes a conversation, which makes consistency far easier than staring at a blank notes page.</p></div>
+          <div class="theo-feature"><h3>Reflect. Reset. Perform.</h3><p>Use Theo before training, after competition, or during any moment where your mindset needs a calm reset.</p></div>
+          <div class="theo-feature"><h3>Useful memory over time</h3><p>Theo is built to understand recurring patterns, routines, and focus areas so your reflection compounds instead of disappearing.</p></div>
+        </div>
       {% when 'support' %}
         <div class="theo-legal-hero"><div class="theo-support-intro"><span class="theo-eyebrow">Theo support</span><h1 class="theo-title" style="max-width:none;">Need help with Theo?</h1><p>If you need help with account access, subscriptions, app issues, privacy questions, or account deletion, use the contact details below and include the email linked to your Theo account where possible.</p><div class="theo-meta"><div class="theo-meta-item"><strong>Support email</strong><a href="mailto:{{ support_email }}">{{ support_email }}</a></div><div class="theo-meta-item"><strong>Website</strong><a href="{{ website_url }}">{{ website_url }}</a></div><div class="theo-meta-item"><strong>Response window</strong><span>{{ response_window }}</span></div></div><div class="theo-callout">Theo is a voice-first AI mindset coach for athletes and performance-focused people. It is not a medical service, crisis service, or substitute for professional mental health care.</div></div><div class="theo-support-main"><section><h2>Account and sign-in help</h2><p>If you cannot access your account, contact support from the email address connected to your Theo account. We may ask you to verify ownership before making account-related changes.</p></section><section><h2>Subscriptions and billing</h2><p>If you subscribed through the Apple App Store or Google Play, subscription management, billing updates, cancellations, and refunds may be governed by the relevant store’s billing terms and support processes.</p><ul><li>Manage or cancel your subscription through the store account used for purchase.</li><li>For app access issues after billing changes, contact Theo support.</li></ul></section><section><h2>App issues and troubleshooting</h2><p>If Theo is not working as expected, include your device type, operating system version, and a short description of the issue when you contact support. Screenshots can also help us resolve problems faster.</p></section><section><h2>Account deletion and privacy requests</h2><p>If account deletion is supported in-app, start the deletion request from within the app. If an email confirmation step is required, follow the instructions sent to your registered email address. You can also contact support with privacy or data-related requests.</p></section></div></div>
       {% when 'privacy' %}
